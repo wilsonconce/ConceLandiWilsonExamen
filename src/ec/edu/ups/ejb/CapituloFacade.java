@@ -1,5 +1,7 @@
 package ec.edu.ups.ejb;
 
+import java.io.PrintWriter;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -20,6 +22,18 @@ public class CapituloFacade extends AbstractFacade<Capitulo> {
 	protected EntityManager getEntityManager() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	public Capitulo buscarTitulo(String nombre) {
+		try {
+			String jpql = "SELECT cap FROM Capitulo cap WHERE cao.titulo= '"+nombre+"'";
+			Capitulo capitulo = (Capitulo) em.createQuery(jpql).getSingleResult();
+			return capitulo;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 }

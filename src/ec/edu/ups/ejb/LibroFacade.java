@@ -22,4 +22,15 @@ public class LibroFacade extends AbstractFacade<Libro> {
 		return null;
 	}
 
+	public Libro buscarTitulo(String valor) {
+		try {
+			String jpql = "SELECT lib FROM Libro lib, Autor au, Capitulo cap WHERE lib.capitulo.titulo='"+valor+"'";
+			Libro libro = (Libro) em.createQuery(jpql).getSingleResult();
+			return libro;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return null;
+		}
+	}
 }
