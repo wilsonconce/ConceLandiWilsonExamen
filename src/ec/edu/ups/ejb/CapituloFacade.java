@@ -1,7 +1,5 @@
 package ec.edu.ups.ejb;
 
-import java.io.PrintWriter;
-
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -11,7 +9,7 @@ import ec.edu.ups.entidad.Capitulo;
 @Stateless
 public class CapituloFacade extends AbstractFacade<Capitulo> {
 
-	@PersistenceContext(unitName = "ConceLandiWilsonExamen")
+	@PersistenceContext(unitName = "examen")
 	private EntityManager em;
 
 	public CapituloFacade() {

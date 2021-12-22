@@ -169,7 +169,7 @@ public class LibroBean implements Serializable {
 	}
 	
 
-	public String add() {
+	/*public String add() {
 		
 		try {
 			Autor autor = ejbAutorFacade.buscarNombre(this.nombreAutor);
@@ -184,7 +184,7 @@ public class LibroBean implements Serializable {
 		}
 		return "te falta aqui";
 	}
-
+*/
 	
 	public String delete(Libro l) {
 		ejbLibroFacade.remove(l);

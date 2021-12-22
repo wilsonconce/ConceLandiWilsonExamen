@@ -8,7 +8,7 @@ import ec.edu.ups.entidad.Libro;
 
 @Stateless
 public class LibroFacade extends AbstractFacade<Libro> {
-	@PersistenceContext(unitName = "ConceLandiWilsonExamen")
+	@PersistenceContext(unitName = "examen")
 	private EntityManager em;
 
 	public LibroFacade() {

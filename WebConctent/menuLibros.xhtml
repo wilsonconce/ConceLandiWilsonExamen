@@ -32,33 +32,6 @@
 </h:head>
 <h:body>
 	<h3>Biblioteca Virtual</h3>
-	<h:form>
-		<h:dataTable value="#{categoryBean.list}" var="c" styleClass="tabla"
-			headerClass="cabeceraTabla" rowClasses="filaPar,filaImpar">
-			<h:column>
-				<f:facet name="header">Codigo</f:facet>#{c.codigo}</h:column>
-			<h:column>
-				<f:facet name="header">Descripción</f:facet>
-				<h:inputText value="#{c.descripcion}" size="10"
-					rendered="#{c.editable}" />
-				<h:outputText value="#{c.descripcion}" rendered="#{not c.editable}" />
-			</h:column>			
-			<h:column>
-				<f:facet name="header">Accion</f:facet>
-				<h:commandLink value="Delete" action="#{categoryBean.delete(c)}" />
-			</h:column>
-			<h:column>
-				<f:facet name="header">Accion</f:facet>
-				<h:commandLink value="Edit" action="#{categoryBean.edit(c)}"
-					rendered="#{not c.editable}" />
-				<h:commandLink value="Save" action="#{categoryBean.save(c)}"
-					rendered="#{c.editable}" />
-			</h:column>
-		</h:dataTable>
-		<ul>
-			<li>Descripción:<h:inputText size="10" value="#{categoryBean.descripcion}"/></li>
-		</ul>
-		<h:commandButton value="Add" action="#{categoryBean.add}" />
-	</h:form>
+	
 </h:body>
 </html>

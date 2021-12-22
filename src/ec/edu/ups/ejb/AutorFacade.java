@@ -5,10 +5,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import ec.edu.ups.entidad.Autor;
+import ec.edu.ups.entidad.Libro;
 
 @Stateless
 public class AutorFacade extends AbstractFacade<Autor>{
-	@PersistenceContext(unitName = "ConceLandiWilsonExamen")
+	@PersistenceContext(unitName = "examen")
 	private EntityManager em;
 	
 	public AutorFacade() {
@@ -21,6 +22,17 @@ public class AutorFacade extends AbstractFacade<Autor>{
 		return null;
 	}
 	
+	public Libro buscarNombre(String valor) {
+		try {
+			String jpql = "";
+			Libro libro = (Libro) em.createQuery(jpql).getSingleResult();
+			return libro;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return null;
+		}
+	}
 	
 
 }
