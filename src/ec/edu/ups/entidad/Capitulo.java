@@ -16,10 +16,19 @@ public class Capitulo implements Serializable {
 	private int codigo;
 	private int numero;
 	private String titulo;
+	@Transient
+    private boolean editable;
 
 	public Capitulo() {
 		super();
 	}
+
+	public Capitulo(int numero, String titulo) {
+		this.numero = numero;
+		this.titulo = titulo;
+	}
+
+
 
 	public int getCodigo() {
 		return codigo;
@@ -43,6 +52,15 @@ public class Capitulo implements Serializable {
 
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
+	}
+	
+
+	public boolean isEditable() {
+		return editable;
+	}
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
 	}
 
 	@Override
