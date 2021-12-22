@@ -1,6 +1,7 @@
 package ec.edu.ups.entidad;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
 
 /**
@@ -17,9 +18,16 @@ public class Libro implements Serializable {
 	private String nombre;
 	private int isbn;
 	private int paginas;
+	@Transient
+	private boolean editable;
 
 	public Libro() {
-		super();
+	}
+
+	public Libro(String nombre, int isbn, int paginas) {
+		this.nombre = nombre;
+		this.isbn = isbn;
+		this.paginas = paginas;
 	}
 
 	public int getCodigo() {
@@ -52,6 +60,14 @@ public class Libro implements Serializable {
 
 	public void setPaginas(int paginas) {
 		this.paginas = paginas;
+	}
+
+	public boolean isEditable() {
+		return editable;
+	}
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
 	}
 
 	@Override
